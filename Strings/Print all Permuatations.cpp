@@ -3,6 +3,8 @@
 // Time Complexity : O(n! * n)
 // Space Complexity : O(n! * n)
 
+https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1#
+
 string permute = "";
 	    string s;
 	    void permutations(int n, vector<bool> &chosen, vector<string> &res){
