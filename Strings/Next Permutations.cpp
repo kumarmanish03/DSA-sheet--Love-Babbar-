@@ -1,5 +1,5 @@
 // Manish Kumar, IIIT Allahabad
-// Easy
+// Medium
 // Time Complexity : O(n)
 // Space Complexity : O(1)
 
