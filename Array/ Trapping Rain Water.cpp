@@ -4,14 +4,34 @@
 * @institute: IIIT Allahabad, INDIA
 *
 * @problem: https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1#
-* @topic: Using next greater and previous greater precomputation
+* @desc: Solution 1 [best solution]
 *
 */
 
+// Solution 1: Try to calculate for each index the water trap above it
 
+#include <bits/stdc++.h> 
+long getTrappedWater(long *arr, int n){
+    vector<long> left(n, 0), right(n, 0);
+    left[0] = arr[0];
+    right[n-1] = arr[n-1];
+    for(int i = 1; i < n; i++){
+        left[i] = max(arr[i], left[i-1]);
+    }
+    for(int i = n-2; i >= 0; i--){
+        right[i] = max(arr[i], right[i+1]);
+    }
+    
+    long ans = 0;
+    for(int i = 1; i < n-1; i++){
+        ans += max(0L, min(left[i-1], right[i+1]) - arr[i]);
+    }
+    return ans;
+}
+
+
+// Solution 2: Using next greater and previous greater precomputation
 class Solution{
-
-    // Function to find the trapped water between the blocks.
     public:
     long long trappingWater(int arr[], int n){
         vector<int> nG(n, -1), pG(n, -1);
@@ -70,3 +90,4 @@ class Solution{
         return ans;
     }
 };
+
