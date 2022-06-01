@@ -4,6 +4,7 @@
 * @institute: IIIT Allahabad, INDIA
 *
 * @problem: https://practice.geeksforgeeks.org/problems/check-if-tree-is-isomorphic/1#
+* @TC: O(min(n1, n2) ^ 2)  : n1 &  n2 are no. of nodes in both tress respectively
 *
 */
 
