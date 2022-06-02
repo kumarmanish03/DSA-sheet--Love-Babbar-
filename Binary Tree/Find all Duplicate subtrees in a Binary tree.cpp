@@ -8,7 +8,7 @@
 */
 
 // Solution 1: TC: O(n^2); SC: O(n^2)
-// @desc: we store the preorder traversal in form of string and hash it for each subtree, then we can easily find duplicate trees
+// @desc: we store the Inorder traversal in form of string and hash it for each subtree, then we can easily find duplicate trees
  
 unordered_map<string, int> m;
 vector<Node*> ans;
@@ -17,8 +17,8 @@ string dfs(Node* root){
         return "";
     
     string s = "(";
-    s += to_string(root->data);
     s += dfs(root->left);
+    s += to_string(root->data);
     s += dfs(root->right);
     s += ")";
     
