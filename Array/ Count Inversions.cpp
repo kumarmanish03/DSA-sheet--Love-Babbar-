@@ -89,4 +89,7 @@ long long getInversions(long long *arr, int n){
         update(arr[i]);
     }
     return cnt;
+
+
+    // i have added this line
 }
